@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+# homework-15
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Описание
 
-Currently, two official plugins are available:
+Одностраничное приложение (SPA) для просмотра информации о персонажах, локациях и эпизодах мультсериала **Rick and Morty**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Технологии
 
-## React Compiler
+- **Vite**
+- **React**
+- **TypeScript**
+- **React Router v6**
+- **Локальные JSON-данные**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 Функциональность
 
-## Expanding the ESLint configuration
+- Главная страница с навигацией
+- Список персонажей с сортировкой по дате создания (через query-параметры)
+- Детальная страница персонажа
+- Список локаций + детальная страница
+- Список эпизодов + детальная страница
+- Навигация доступна на всех страницах
+- Страница 404 при неверном маршруте
+- Типизация данных через TypeScript
+- Используются project references (`tsconfig.app.json`, `tsconfig.node.json`)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📁 Структура проекта
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+src/
+  data/          # Локальные JSON-данные
+  layouts/       # Основной layout с навигацией
+  pages/         # Страницы приложения
+  types.ts       # Типы данных TypeScript
+  main.tsx       # Точка входа
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Установка и запуск
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
+
+## Назначение проекта
+
+Проект создан в учебных целях.
